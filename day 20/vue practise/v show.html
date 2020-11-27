@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<img v-show="isShow" src="img/23.jpg">
+    <input type="button" v-on:click="changeisShow" value="切换显示效果">
+</div>
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            isShow:false
+        },
+        methods: {
+            changeisShow:function (){
+                this.isShow = !this.isShow;
+            }
+        }
+    })
+</script>
+</body>
+</html>

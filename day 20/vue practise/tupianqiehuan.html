@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <img v-bind:src="imgArr[index]">
+    <input type="button" value="上一张" v-on:click="prev">
+    <input type="button" value="下一张" v-on:click="next">
+</div>
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            imgArr:['images/img1.jpg','images/img2.jpg','images/img3.jpg','images/img4.jpg'],
+            index:0
+        },
+        methods:{
+            prev:function (){
+                if(this.index == 0){
+                    this.index = 3
+                }else{
+                    this.index--
+                }
+
+            },
+            next:function (){
+                if(this.index == 3){
+                    this.index = 0
+                }else{
+                    this.index++
+                }
+
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

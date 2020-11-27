@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(item,index) in arr">{{ index+1 }}球员名称: {{ item }}</li>
+        <li v-for="item in skill">技巧:{{ item.name }}</li>
+    </ul>
+    <input type="button" value="添加" v-on:click="add">
+    <input type="button" value="删除" v-on:click="remove">
+</div>
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            arr:["fung","durant","kobe","james"],
+            skill:[
+                {name:"三分"},
+                {name:"突破"},
+                {name:"两分"}
+            ]
+        },
+        methods:{
+            add:function (){
+                this.skill.push({ name:"罚篮" })
+            },
+            remove:function (){
+                this.skill.shift()
+            }
+        }
+    })
+</script>
+</body>
+</html>

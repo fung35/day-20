@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="button" v-on:click="doIt(35,'fung')">
+    <input type="text" v-on:keyup.enter="dazi">
+</div>
+<script>
+    var app = new Vue({
+        el:"#app",
+        methods:{
+            doIt:function (a1,a2){
+                console.log("做这个");
+                console.log(a1);
+                console.log(a2)
+            },
+            dazi:function (){
+                alert("hello")
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

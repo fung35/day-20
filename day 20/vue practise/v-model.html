@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="message" v-on:keyup.enter="getname">
+    <h1>{{ message }}</h1>
+     <input type="button" v-on:click="setname" value="点击">
+</div>
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            message: "篮球运动员"
+        },
+        methods:{
+            getname:function (){
+                alert(this.message)
+            },
+            setname:function (){
+                this.message = "no.1 "
+            }
+        }
+    })
+</script>
+</body>
+</html>
